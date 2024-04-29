@@ -1,343 +1,7 @@
+const API =
+  "https://script.google.com/macros/s/AKfycbxC3OVP8SjFMnPn-wt3-KtVWkgwOFKbFLmsvd1ZbyUtRtyCOqK5tjtICvGdqKtvS8CA/exec";
 // ________FAKE_DATA_______________
-let questions = [
-  {
-    quiz_id: 1,
-    question: "Dịch vụ Fax công cộng",
-    answers: [
-      "Mở tại các cơ sở bưu điện",
-      "Mở các tổ chức cá nhân",
-      "Mở tại nhà riêng",
-      "Mở các cột điện thoại công cộng",
-    ],
-  },
-  {
-    quiz_id: 2,
-    question: "Dịch vụ Fax thuê bao cung cấp cho đôi tượng?",
-    answers: [
-      "Các cơ sở bưu điện",
-      "Các tổ chức cá nhân hoặc nhà riêng",
-      "Các đô thị mới",
-      "Các cột điện thoại công cộng",
-    ],
-  },
-  {
-    quiz_id: 3,
-    question:
-      "Thiết bị Fax thuê bao được đấu nối với tổng đài điện thoại công cộng bằng:",
-    answers: [
-      "Đường cáp riêng",
-      "Đường cáp chung",
-      "Đừng cáp quang",
-      "Đường cáp riêng hoặc đường cáp chung",
-    ],
-  },
-  {
-    quiz_id: 4,
-    question: "Cụm từ nào chỉ dịch vụ VoIP ?",
-    answers: [
-      "Voice of Internet Protocol",
-      "Vone over Internet Protocol",
-      "Voice over Internet Protocol",
-      "Voice of Intel Protocol",
-    ],
-  },
-  {
-    quiz_id: 5,
-    question: "Độ rộng của băng (bandwidth)",
-    answers: [
-      "Là khái niệm về khối lượng dữ liệu truyền qua cáp hay kênh truyền thông",
-      "Là mức độ cho phép dữ liệu đi qua đường truyền",
-      "Là kích thước đường truyền",
-      "Là thời gian truyền thông trong một khoảng thời gian",
-    ],
-  },
-  {
-    quiz_id: 6,
-    question:
-      "Sản phẩm đa phương tiện đặc biệt chú trọng vào đối tượng người khuyết tật nào?",
-    answers: [
-      "Trẻ em không nơi nương tựa",
-      "Học sinh tiểu học",
-      "Khiếm thị,Khiếm thính",
-      "Những người chân tay hoạt động không bình thường",
-    ],
-  },
-  {
-    quiz_id: 7,
-    question: "Công nghệ VoIP...?",
-    answers: [
-      "Cho phép tạo cuộc gọi dùng kết nội bàng thông rộng",
-      "Cho phép tạo cuộc gọi dùng kết nội bàng thông hẹp",
-      "Cho phép tạo cuộc gọi dùng đường dây điện thoại hương tự",
-      "Cho phép tạo cuộc gọi như giữa hai thai điện thoại thông thường",
-    ],
-  },
-  {
-    quiz_id: 8,
-    question: "Công nghệ VoIP được thực hiện theo tiến trình",
-    answers: [
-      "Chuyển đổi tín hiệu thoại thành tín hiệu điện, chuyên đổi tín hiệu điện thành tín hiệu thoại, truyên qua Internet.",
-      "Chuyên đôi tin hiệu điện thành tín hiệu thoại, truyền qua Internet, chuyên đòi tín hiệu thoại thành tín hiệu điện.",
-      "Chuyên đôi tín hiệu thoại thành tín hiệu điện, truyên qua Internet, chuyên đổi tín hiệu điện thành tín hiệu thoại",
-      "Chuyên đôi tín hiệu điện thành tín hiệu thoại, chuyên đôi tin hiệu thoại thành tín hiệu điện, truyên qua Internet.",
-    ],
-  },
-  {
-    quiz_id: 9,
-    question: "Công nghệ VoIP có tính năng?",
-    answers: [
-      "Tạo cuộc gọi đường dài qua mạng dữ liệu IP có sẵn",
-      "Truyền cuộc gọi qua mạng PSTN (public switched telephone network)",
-      "Truyền cuộc gọi qua mạng cục bộ",
-      "Tạo cuộc gọi đường dài qua mạng đô thị",
-    ],
-  },
-  {
-    quiz_id: 10,
-    question: "Mục đích sử dụng dịch vụ VoIP của nhiều cơ quan, doanh nghiệp?",
-    answers: [
-      "Đây là công nghệ mới",
-      "Giảm thiểu chi phí cho những cuộc gọi đường dài giữa nhiều chi nhánh xa nhau",
-      "Do nhiều cơ quan đã sử dụng",
-      "Giảm thời gian cho những cuộc gọi đường dài",
-    ],
-  },
-  {
-    quiz_id: 11,
-    question: "Công nghệ VoIP có tính năng?",
-    answers: [
-      "Chỉ cho phép truyền dữ liệu thoại",
-      "Chỉ cho phép truyền dữ liệu thoại và văn bản",
-      "Chỉ cho phép truyên văn bản và hình ảnh",
-      "Truyền dữ liệu thoại và các kiểu dữ liệu multimedia khác",
-    ],
-  },
-  {
-    quiz_id: 12,
-    question: "Dịch vụ VPN (Virtual Private Network) là gì?",
-    answers: [
-      "Là dịch vụ mạng đô thị",
-      "Là dịch vụ mạng diện rộng",
-      "Là dịch vụ mạng theo yêu cầu",
-      "Là dịch vụ mạng riêng ảo",
-    ],
-  },
-  {
-    quiz_id: 13,
-    question: "Yêu tô không phải của chât lượng dịch vụ QoS?",
-    answers: [
-      "Chất lượng về hỗ trợ dịch vụ",
-      "Chất lượng về khai thác dịch vụ",
-      "Chất lượng về thiết bị của mạng lưới",
-      "Chất lượng về dịch vụ thuê bao của mạng",
-    ],
-  },
-  {
-    quiz_id: 14,
-    question: "NP (Năng lực mạng) là viết tắt của cụm từ nào sau đây:",
-    answers: [
-      "Network Ping",
-      "Network Provider",
-      "Network Performance",
-      "Network Protocol",
-    ],
-  },
-  {
-    quiz_id: 15,
-    question: "Các ý kiên sau đây, ý kiên nào là đúng?",
-    answers: [
-      "Nếu mạng có NP tốt thì có QoS thấp",
-      "Hiệu năng mạng NP không ảnh hưởng tới QoS",
-      "Trong một số trường hợp hiệu năng mạng NP chính là QoS",
-      "QoS không liên quan tới NP",
-    ],
-  },
-  {
-    quiz_id: 16,
-    question:
-      "Tham số nào sau đây không sử dụng để đánh giá hiệu năng mạng NP?",
-    answers: ["Độ trễ", "Độ khả dụng", "Độ suy hao", "Thông lượng"],
-  },
-  {
-    quiz_id: 17,
-    question:
-      "Dịch vụ Telex là dịch vụ cho phép các thuê bao trao đôi thông tin với nhau",
-    answers: [
-      "Dưới dạng chữ bằng cách gõ vào từ bàn phím",
-      "Dưới dạng ảnh chụp văn bản",
-      "Dưới dạng tín hiệu thoại",
-      "Dưới dạng tín hiệu vô tuyến",
-    ],
-  },
-  {
-    quiz_id: 18,
-    question: "Dịch vụ Telex cho phép nhận thông tin",
-    answers: [
-      "Dưới dạng nhận thư điện tử",
-      "Trên màn hình hoặc in ra bằng giấy",
-      "Dưới dạng nhận tin nhăn",
-      "Trên website cá nhân của người nhận",
-    ],
-  },
-  {
-    quiz_id: 19,
-    question: "Dịch vụ Telex sử dụng đường truyền nào?",
-    answers: [
-      "Tốc độ cao",
-      "Tốc độ thấp",
-      "Tốc độ trung bình",
-      "Dưới dạng tín hiệu vô tuyến",
-    ],
-  },
-  {
-    quiz_id: 20,
-    question: "Dịch vụ Telex dựa trên loại mạng nào?",
-    answers: [
-      "Mạng toàn câu Internet",
-      "Mạng đô thị MAN",
-      "Mạng diện rộng GAN",
-      "Mạng kết nối riêng",
-    ],
-  },
-  {
-    quiz_id: 21,
-    question: "Cách đánh số thuê bao của dịch vụ Telex?",
-    answers: [
-      "Giống thuê bao điện thoại di động",
-      "Giống thuê bao điện thoại cố định",
-      "Khác thuê bao điện thoại thông thường",
-      "Giống thuê bao điện thoại thông thường",
-    ],
-  },
-  {
-    quiz_id: 22,
-    question: "",
-    answers: ["", "", "", ""],
-  },
-  {
-    quiz_id: 23,
-    question: "",
-    answers: ["", "", "", ""],
-  },
-  {
-    quiz_id: 24,
-    question: "",
-    answers: ["", "", "", ""],
-  },
-];
-const results = [
-  {
-    quiz_id: 1,
-    answer: "Mở tại các cơ sở bưu điện",
-  },
-  {
-    quiz_id: 3,
-    answer: "Đường cáp riêng hoặc đường cáp chung",
-  },
-  {
-    quiz_id: 2,
-    answer: "Các tổ chức cá nhân hoặc nhà riêng",
-  },
-  {
-    quiz_id: 4,
-    answer: "Voice over Internet Protocol",
-  },
-  {
-    quiz_id: 5,
-    answer:
-      "Là khái niệm về khối lượng dữ liệu truyền qua cáp hay kênh truyền thông.",
-  },
-  {
-    quiz_id: 6,
-    answer: "Khiếm thị,Khiếm thính",
-  },
-  {
-    quiz_id: 7,
-    answer: "Cho phép tạo cuộc gọi dùng kết nội bàng thông rộng",
-  },
-  {
-    quiz_id: 8,
-    answer:
-      "Chuyên đôi tín hiệu thoại thành tín hiệu điện, truyên qua Internet, chuyên đổi tín hiệu điện thành tín hiệu thoại",
-  },
-  {
-    quiz_id: 9,
-    answer: "Tạo cuộc gọi đường dài qua mạng dữ liệu IP có sẵn",
-  },
-  {
-    quiz_id: 10,
-    answer:
-      "Giảm thiểu chi phí cho những cuộc gọi đường dài giữa nhiều chi nhánh xa nhau",
-  },
-  {
-    quiz_id: 11,
-    answer: "Truyền dữ liệu thoại và các kiểu dữ liệu multimedia khác",
-  },
-  {
-    quiz_id: 12,
-    answer: "Là dịch vụ mạng riêng ảo",
-  },
-  {
-    quiz_id: 13,
-    answer: "Chất lượng về thiết bị của mạng lưới",
-  },
-  {
-    quiz_id: 14,
-    answer: "Network Performance",
-  },
-  {
-    quiz_id: 15,
-    answer: "Trong một số trường hợp hiệu năng mạng NP chính là QoS",
-  },
-  {
-    quiz_id: 16,
-    answer: "Độ khả dụng",
-  },
-  {
-    quiz_id: 17,
-    answer: "Dưới dạng chữ bằng cách gõ vào từ bàn phím",
-  },
-  {
-    quiz_id: 18,
-    answer: "Trên màn hình hoặc in ra bằng giấy",
-  },
-  {
-    quiz_id: 19,
-    answer: "Tốc độ thấp",
-  },
-  {
-    quiz_id: 20,
-    answer: "Mạng kết nối riêng",
-  },
-  {
-    quiz_id: 21,
-    answer: "Khác thuê bao điện thoại thông thường",
-  },
-  {
-    quiz_id: 22,
-    answer: "dialect",
-  },
-  {
-    quiz_id: 23,
-    answer: "dialect",
-  },
-  {
-    quiz_id: 24,
-    answer: "dialect",
-  },
-  {
-    quiz_id: 25,
-    answer: "dialect",
-  },
-  {
-    quiz_id: 26,
-    answer: "dialect",
-  },
-  {
-    quiz_id: 27,
-    answer: "dialect",
-  },
-];
+let questions;
 // ________QUIZ_APP________________
 const quizTimer = document.querySelector("#timer");
 const quizProgress = document.querySelector("#progress");
@@ -364,7 +28,36 @@ const quiz = {
     questions.forEach((q) => {
       q.answers = randomArray(q.answers);
     });
-    console.log(questions);
+  },
+
+  getQuestions: async function () {
+    try {
+      const response = await fetch(`${API}?category=quiz`);
+      const data = await response.json();
+      questions = data;
+      console.log(data);
+    } catch (error) {
+      alert("Da xay ra loi");
+    }
+  },
+  getResults: async function () {
+    quizSubmit.innerText = "Đang nộp bài";
+    const postData = {
+      category: "quiz",
+      questions: questions,
+    };
+    try {
+      const response = await fetch(API, {
+        method: "POST",
+        body: JSON.stringify(postData),
+      });
+      const results = await response.json();
+      this.handleCheckResults(results);
+      quizSubmit.innerText = "Kết quả";
+      quizSubmit.style = "pointer-events:none";
+    } catch (error) {
+      alert("Da xay ra loi");
+    }
   },
   renderQuestionList: function () {
     let render = "";
@@ -386,7 +79,7 @@ const quiz = {
     quizProgressText.innerText = `0/${questions.length}`;
   },
   renderTimer: function () {
-    var timer = 1800;
+    var timer = 60 * 15;
     let _this = this;
     // Lấy thẻ p có id là "timer"
     var countdownElement = document.getElementById("timer");
@@ -412,7 +105,7 @@ const quiz = {
       // Kiểm tra nếu hết thời gian
       if (timer < 0) {
         countdownElement.innerHTML = "Hết thời gian!";
-        _this.handleCheckResults();
+        _this.getResults();
       }
       if (isSubmit) {
         clearInterval(intervalId);
@@ -511,13 +204,13 @@ const quiz = {
     quizSubmit.addEventListener("click", () => {
       const progressLen = listSubmit.filter((item) => item >= 0);
       if (progressLen.length === questions.length) {
-        this.handleCheckResults();
+        this.getResults();
       } else {
         alert("Bạn chưa chọn hết đáp án");
       }
     });
   },
-  handleCheckResults: function () {
+  handleCheckResults: function (results) {
     let correct = 0;
     questions.forEach((item, index) => {
       const result = results.find((r) => r.quiz_id === item.quiz_id);
@@ -531,6 +224,7 @@ const quiz = {
     });
     isSubmit = true;
     this.handleProgress(correct);
+    quizQuestions[0].click();
   },
   handleKeyDown: function () {
     document.addEventListener("keydown", (e) => {
@@ -558,7 +252,8 @@ const quiz = {
     this.handleKeyDown();
     this.handleSubmit();
   },
-  start: function () {
+  start: async function () {
+    await this.getQuestions();
     this.randomQuestions();
     this.render();
     this.handle();

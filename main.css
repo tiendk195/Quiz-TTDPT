@@ -97,7 +97,7 @@ button {
 }
 #progress {
   stroke: var(--main-clr);
-  stroke-dasharray: 250 9999;
+  stroke-dasharray: 899 9999;
   transition: 0.5s;
 }
 #progress_text {
@@ -189,4 +189,47 @@ ul {
   background: white;
   border: 1px solid var(--main-clr);
   color: var(--main-clr);
+}
+/* Media query cho các thiết bị có độ rộng màn hình tối đa là 768px */
+@media only screen and (max-width: 768px) {
+  .quiz_wrapper {
+    width: 90%; /* Thay đổi chiều rộng của .quiz_wrapper */
+    padding: 2rem; /* Thay đổi lề của .quiz_wrapper */
+  }
+
+  .quiz_header {
+    flex-direction: column; /* Đổi hướng linh động của .quiz_header thành dọc */
+    align-items: flex-start; /* Canh chỉnh các phần tử trong .quiz_header theo chiều dọc */
+    gap: 1.5rem; /* Thêm khoảng cách giữa các phần tử trong .quiz_header */
+  }
+
+  .quiz_timer {
+    flex-direction: column; /* Đổi hướng linh động của .quiz_timer thành dọc */
+    align-items: center; /* Canh chỉnh các phần tử trong .quiz_timer theo chiều dọc */
+    gap: 0.5rem; /* Thêm khoảng cách giữa các phần tử trong .quiz_timer */
+  }
+
+  .quiz_timer > i {
+    font-size: 2rem; /* Giảm kích thước của biểu tượng đồng hồ */
+  }
+
+  .quiz_progress {
+    width: 150px; /* Thay đổi chiều rộng của .quiz_progress */
+    margin-top: 2rem; /* Thay đổi khoảng cách từ trên xuống của .quiz_progress */
+  }
+
+  .quiz_question ul li {
+    width: 100%; /* Chiếm toàn bộ chiều rộng của .quiz_question ul li */
+  }
+
+  .quiz_numbers > ul {
+    width: 100%; /* Chiếm toàn bộ chiều rộng của .quiz_numbers > ul */
+    justify-content: center; /* Căn giữa các phần tử trong .quiz_numbers > ul */
+  }
+
+  .quiz_numbers > ul > li {
+    width: 3rem; /* Giảm kích thước của các nút trong .quiz_numbers > ul > li */
+    height: 3rem; /* Giảm kích thước của các nút trong .quiz_numbers > ul > li */
+    font-size: 1.2rem; /* Giảm kích thước chữ của các nút trong .quiz_numbers > ul > li */
+  }
 }
