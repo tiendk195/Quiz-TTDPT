@@ -1,5 +1,5 @@
 const API =
-  "https://script.google.com/macros/s/AKfycbxI57lkKLYiF_UcayGBd23BhmYNdTJRvpSUnq7ogeI4K4_eB3gHawvJy9ifpwUVi6yu/exec";
+  "https://script.google.com/macros/s/AKfycbx_v3wMHgJHDnhnduv4P3NvAUrbDWGyudnmkicDoM2NBzUBbIc9abSce2YF--X-E1h-/exec";
 // ________FAKE_DATA_______________
 let questions;
 // ________QUIZ_APP________________
