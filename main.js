@@ -79,7 +79,7 @@ const quiz = {
     quizProgressText.innerText = `0/${questions.length}`;
   },
   renderTimer: function () {
-    var timer = 60 * 30;
+    var timer = 60 * 90;
     let _this = this;
     // Lấy thẻ p có id là "timer"
     var countdownElement = document.getElementById("timer");
